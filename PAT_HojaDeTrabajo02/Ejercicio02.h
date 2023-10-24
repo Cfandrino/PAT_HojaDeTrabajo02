@@ -1,7 +1,4 @@
-// Ejercicio02.h
-
 #pragma once
-
 #include "Node.h"
 
 class Ejercicio02 {
