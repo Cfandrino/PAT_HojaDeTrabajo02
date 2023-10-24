@@ -1,7 +1,7 @@
 #include "Ejercicio04.h"
 
 FrontMiddleBackQueue::FrontMiddleBackQueue() {
-    // Constructor, no es necesario hacer nada especial aquí
+
 }
 
 void FrontMiddleBackQueue::pushFront(int value) {
@@ -10,7 +10,9 @@ void FrontMiddleBackQueue::pushFront(int value) {
 
 void FrontMiddleBackQueue::pushMiddle(int value) {
     int middle = data.size() / 2;
-    auto it = data.begin() + middle;
+    auto it = data.begin();
+    std::advance(it, middle);
+
     data.insert(it, value);
 }
 
@@ -32,7 +34,8 @@ int FrontMiddleBackQueue::popMiddle() {
         return -1;
     }
     int middle = data.size() / 2;
-    auto it = data.begin() + middle;
+    auto it = data.begin();
+    std::advance(it, middle);
     int value = *it;
     data.erase(it);
     return value;
@@ -44,5 +47,6 @@ int FrontMiddleBackQueue::popBack() {
     }
     int value = data.back();
     data.pop_back();
-    return value;
+    return value;
+
 }

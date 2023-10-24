@@ -1,13 +1,12 @@
-
-#include "Ejercicio03.h"
 #include <stack>
+#include <string>
 
-int Ejercicio03::calculate(std::string s) {
+int calculate(std::string s) {
     std::stack<int> numStack;
     std::stack<char> opStack;
     int num = 0;
     int result = 0;
-    int sign = 1; // Signo positivo por defecto
+    int sign = 1;
 
     for (char c : s) {
         if (std::isdigit(c)) {
@@ -38,5 +37,5 @@ int Ejercicio03::calculate(std::string s) {
     }
 
     result += sign * num;
-    return result;
+    return result;
 }

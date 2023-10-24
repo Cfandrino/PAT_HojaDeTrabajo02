@@ -1,3 +1,6 @@
+
+#include <list>
+
 #ifndef EJERCICIO04_H
 #define EJERCICIO04_H
 
@@ -8,9 +11,13 @@ public:
     FrontMiddleBackQueue();
 
     void pushFront(int value);
+
     void pushMiddle(int value);
+
     void pushBack(int value);
+
     int popFront();
+
     int popMiddle();
     int popBack();
 

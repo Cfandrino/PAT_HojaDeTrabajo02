@@ -2,13 +2,14 @@
 #include "Ejercicio01.h"
 #include "Ejercicio02.h"
 #include "Ejercicio03.h"
+#include "Ejercicio04.h"
 #include "Node.h"
 
 int main() {
-    // Ejercicio 01: Rotación de lista
+
     Ejercicio01 e01;
 
-    // Crear una lista para probar la rotación (debes construir la lista según tus necesidades)
+
     Node<char>* head = new Node<char>('a');
     head->next = new Node<char>('b');
     head->next->next = new Node<char>('c');
@@ -25,10 +26,10 @@ int main() {
     }
     std::cout << "nullptr" << std::endl;
 
-    // Ejercicio 02: Suma de números en listas enlazadas
+
     Ejercicio02 e02;
 
-    // Crear dos listas para probar la suma (debes construir las listas según tus necesidades)
+
     Node<int>* l1 = new Node<int>(2);
     l1->next = new Node<int>(4);
     l1->next->next = new Node<int>(3);
@@ -49,12 +50,28 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Ejercicio 03: Evaluación de expresiones aritméticas
     Ejercicio03 e03;
 
     std::string expression = "3+2*2";
     int result = e03.calculate(expression);
     std::cout << "Resultado de la evaluación de expresión: " << result << std::endl;
+
+    return 0;
+    Ejercicio04 e04;
+
+    FrontMiddleBackQueue queue;
+
+
+    queue.pushFront(1);
+    queue.pushMiddle(2);
+    queue.pushBack(3);
+
+
+    std::cout << "Contenido de la cola: ";
+    std::cout << queue.popFront() << " ";
+    std::cout << queue.popMiddle() << " ";
+    std::cout << queue.popBack() << " ";
+    std::cout << std::endl;
 
     return 0;
 }

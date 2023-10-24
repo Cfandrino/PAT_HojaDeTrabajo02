@@ -5,7 +5,7 @@
 
 class Ejercicio02 {
 public:
-    Node* addTwoNumbers(Node* l1, Node* l2);
+    Node<int>* addTwoNumbers(Node<int>* l1, Node<int>* l2);
 };
 
 #endif
