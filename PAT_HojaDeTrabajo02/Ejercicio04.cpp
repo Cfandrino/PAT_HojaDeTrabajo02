@@ -1,32 +1,50 @@
+// Ejercicio04.cpp
+
 #include "Ejercicio04.h"
 
-FrontMiddleBackQueue::FrontMiddleBackQueue()
-{
+FrontMiddleBackQueue::FrontMiddleBackQueue() {
+    // Constructor, no es necesario hacer nada especial aquí
 }
 
-void FrontMiddleBackQueue::pushFront(int value)
-{
+void FrontMiddleBackQueue::pushFront(int value) {
+    data.push_front(value);
 }
 
-void FrontMiddleBackQueue::pushMiddle(int value)
-{
+void FrontMiddleBackQueue::pushMiddle(int value) {
+    int middle = data.size() / 2;
+    auto it = data.begin() + middle;
+    data.insert(it, value);
 }
 
-void FrontMiddleBackQueue::pushBack(int value)
-{
+void FrontMiddleBackQueue::pushBack(int value) {
+    data.push_back(value);
 }
 
-int FrontMiddleBackQueue::popFront()
-{
-	return 0;
+int FrontMiddleBackQueue::popFront() {
+    if (data.empty()) {
+        return -1;
+    }
+    int value = data.front();
+    data.pop_front();
+    return value;
 }
 
-int FrontMiddleBackQueue::popMiddle()
-{
-	return 0;
+int FrontMiddleBackQueue::popMiddle() {
+    if (data.empty()) {
+        return -1;
+    }
+    int middle = data.size() / 2;
+    auto it = data.begin() + middle;
+    int value = *it;
+    data.erase(it);
+    return value;
 }
 
-int FrontMiddleBackQueue::popBack()
-{
-	return 0;
+int FrontMiddleBackQueue::popBack() {
+    if (data.empty()) {
+        return -1;
+    }
+    int value = data.back();
+    data.pop_back();
+    return value;
 }
