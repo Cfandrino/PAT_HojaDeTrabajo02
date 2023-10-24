@@ -1,36 +1,48 @@
 #include "Ejercicio04.h"
 
 FrontMiddleBackQueue::FrontMiddleBackQueue() {
-    // Implementación del constructor
-    // ...
+    // Constructor, no es necesario hacer nada especial aquí
 }
 
 void FrontMiddleBackQueue::pushFront(int value) {
-    // Implementación de pushFront
-    // ...
+    data.push_front(value);
 }
 
 void FrontMiddleBackQueue::pushMiddle(int value) {
-    // Implementación de pushMiddle
-    // ...
+    int middle = data.size() / 2;
+    auto it = data.begin() + middle;
+    data.insert(it, value);
 }
 
 void FrontMiddleBackQueue::pushBack(int value) {
-    // Implementación de pushBack
-    // ...
+    data.push_back(value);
 }
 
 int FrontMiddleBackQueue::popFront() {
-    // Implementación de popFront
-    // ...
+    if (data.empty()) {
+        return -1;
+    }
+    int value = data.front();
+    data.pop_front();
+    return value;
 }
 
 int FrontMiddleBackQueue::popMiddle() {
-    // Implementación de popMiddle
-    // ...
+    if (data.empty()) {
+        return -1;
+    }
+    int middle = data.size() / 2;
+    auto it = data.begin() + middle;
+    int value = *it;
+    data.erase(it);
+    return value;
 }
 
 int FrontMiddleBackQueue::popBack() {
-    // Implementación de popBack
-    // ...
+    if (data.empty()) {
+        return -1;
+    }
+    int value = data.back();
+    data.pop_back();
+    return value;
 }

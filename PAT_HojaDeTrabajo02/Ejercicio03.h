@@ -1,7 +1,11 @@
-#pragma once
+#ifndef EJERCICIO03_H
+#define EJERCICIO03_H
+
 #include <string>
 
 class Ejercicio03 {
 public:
-    int evaluateExpression(const std::string& s);
+    int calculate(std::string s);
 };
+
+#endif
