@@ -37,5 +37,5 @@ int calculate(std::string s) {
     }
 
     result += sign * num;
-    return result;
+    return result;
 }

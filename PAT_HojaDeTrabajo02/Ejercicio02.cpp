@@ -1,17 +1,34 @@
+
+#pragma once
+#include "Node.h"
+
+class Ejercicio02 {
+public:
+    Node<int>* addTwoNumbers(Node<int>* l1, Node<int>* l2);
+};
+
+
 #include "Ejercicio02.h"
 
 Node<int>* Ejercicio02::addTwoNumbers(Node<int>* l1, Node<int>* l2) {
     int carry = 0;
-    Node<int>* result = new Node<int>();
-    Node<int>* current = result;
+    Node<int>* result = nullptr;
+    Node<int>* current = nullptr;
 
-    while (l1 || l2) {
-        int x = l1 ? l1->data : 0;
-        int y = l2 ? l2->data : 0;
+    while (l1 || l2 || carry) {
+        int x = l1 ? l1->value : 0;
+        int y = l2 ? l2->value : 0;
         int _sum = x + y + carry;
         carry = _sum / 10;
 
-        current->data = _sum % 10;
+        if (!result) {
+            result = new Node<int>(_sum);
+            current = result;
+        }
+        else {
+            current->next = new Node<int>(_sum);
+            current = current->next;
+        }
 
         if (l1) {
             l1 = l1->next;
@@ -19,18 +36,7 @@ Node<int>* Ejercicio02::addTwoNumbers(Node<int>* l1, Node<int>* l2) {
         if (l2) {
             l2 = l2->next;
         }
-
-        if (l1 || l2) {
-
-            current->next = new Node<int>();
-            current = current->next;
-        }
     }
 
-    if (carry) {
-
-        current->next = new Node<int>(carry);
-    }
-
-    return result;
+    return result;
 }

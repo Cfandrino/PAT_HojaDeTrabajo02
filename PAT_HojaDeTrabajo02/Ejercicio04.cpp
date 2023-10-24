@@ -47,6 +47,6 @@ int FrontMiddleBackQueue::popBack() {
     }
     int value = data.back();
     data.pop_back();
-    return value;
+    return value;
 
 }

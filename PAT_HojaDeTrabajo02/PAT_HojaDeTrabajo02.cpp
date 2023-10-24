@@ -9,7 +9,6 @@ int main() {
 
     Ejercicio01 e01;
 
-
     Node<char>* head = new Node<char>('a');
     head->next = new Node<char>('b');
     head->next->next = new Node<char>('c');
@@ -26,9 +25,7 @@ int main() {
     }
     std::cout << "nullptr" << std::endl;
 
-
     Ejercicio02 e02;
-
 
     Node<int>* l1 = new Node<int>(2);
     l1->next = new Node<int>(4);
@@ -56,22 +53,6 @@ int main() {
     int result = e03.calculate(expression);
     std::cout << "Resultado de la evaluación de expresión: " << result << std::endl;
 
-    return 0;
-    Ejercicio04 e04;
-
-    FrontMiddleBackQueue queue;
-
-
-    queue.pushFront(1);
-    queue.pushMiddle(2);
-    queue.pushBack(3);
-
-
-    std::cout << "Contenido de la cola: ";
-    std::cout << queue.popFront() << " ";
-    std::cout << queue.popMiddle() << " ";
-    std::cout << queue.popBack() << " ";
-    std::cout << std::endl;
-
+    
     return 0;
 }

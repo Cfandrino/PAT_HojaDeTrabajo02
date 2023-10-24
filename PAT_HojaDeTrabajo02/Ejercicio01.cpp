@@ -28,5 +28,5 @@ Node<char>* Ejercicio01::rotateRight(Node<char>* head, int k) {
     head = newHead->next;
     newHead->next = nullptr;
 
-    return head;
+    return head;
 }

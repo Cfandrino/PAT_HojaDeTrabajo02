@@ -1,6 +1,4 @@
 
-#include <list>
-
 #ifndef EJERCICIO04_H
 #define EJERCICIO04_H
 
